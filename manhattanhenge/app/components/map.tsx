@@ -11,7 +11,7 @@ export default function Map() {
 
     useEffect(() => {
         if (!mapContainer.current) return;
-        const map = new mapboxgl.Map({
+        const mapboxmap = new mapboxgl.Map({
             container: mapContainer.current,
             style: "mapbox://styles/mapbox/outdoors-v12",
             center: [-73.9857, 40.7484],
@@ -20,7 +20,7 @@ export default function Map() {
             bearing: 0,
         });
 
-        return () => map.remove();
+        return () => mapboxmap.remove();
     }, []);
 
     return (
