@@ -4,27 +4,29 @@ import { useState } from "react";
 
 export default function DateCityForm() {
     const [date, setDate] = useState("");
-    const [city, setCity] = useState("New York, NY");
+    const [city, setCity] = useState("");
 
     return (
         <form className="flex flex-col gap-4 mb-8">
-            <label className="text-sm text-zinc-700 dark:text-zinc-300 font-medium">
+            <label className="text-base text-zinc-700 dark:text-zinc-300 bold font-bold"
+            style={{ fontFamily: "var(--font-playfair)" }}>
                 City
                 <input 
                     type="text"
                     value={city}
                     onChange={e => setCity(e.target.value)}
-                    className="mt-1 w-full rounded border border-zinc-300 px-3 py-2 text-base bg-white dark:bg-zinc-900 dark:text-zinc-100"
+                    className="mt-1 w-full rounded border border-zinc-300 px-3 py-2 text-base bg-white dark:bg-zinc-900 dark:text-zinc-100 font-medium"
                     placeholder="Enter City (e.g. New York, NY)"
                 />
             </label>
-            <label className="text-sm text-zinc-700 dark:text-zinc-300 font-medium">
+            <label className="text-base text-zinc-700 dark:text-zinc-300 font-bold"
+            style={{ fontFamily: "var(--font-playfair)" }}>
                 Date & Time
                 <input
                     type="datetime-local"
                     value={date}
                     onChange={e => setDate(e.target.value)}
-                    className="mt-1 w-full rounded border border-zinc-300"
+                    className="mt-1 w-full rounded border border-zinc-300 px-3 py-2 bg-white dark:bg-zinc-900 dark:text-zinc-100 font-medium"
                 />
             </label>
             <button

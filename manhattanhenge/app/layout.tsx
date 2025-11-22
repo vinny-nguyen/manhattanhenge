@@ -28,6 +28,12 @@ const playfair = Playfair_Display({
   weight: ["700"],
 });
 
+const playfair_light = Playfair_Display({
+  variable: "--font-playfair_light",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 
 export default function RootLayout({
   children,
