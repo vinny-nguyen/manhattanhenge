@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
     "mapbox-gl": "^3.16.0"
   }
 }
