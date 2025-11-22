@@ -18,11 +18,16 @@ export const metadata: Metadata = {
   description: "Manhattanhenge Azimuth Sunset Street Map",
 };
 
-// // Imports:
-// import dynamic from "next/dynamic";
+// Imports:
+import { Playfair_Display } from "next/font/google";
 
-// // Constants:
-// const ManhattanhengeMap = dynamic(() => Promise.resolve(function MapPage() { return <div style={{display: "none"}}/> }));
+// Constants:
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["700"],
+});
+
 
 export default function RootLayout({
   children,
@@ -31,8 +36,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {/* <ManhattanhengeMap/> */}
+      <body className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable}`}>
+        {children}
       </body>
     </html>
   );
