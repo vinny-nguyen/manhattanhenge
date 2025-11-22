@@ -4,7 +4,7 @@
 import { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 
-mapboxgl.accessToken = "MAPBOX_TOKEN";
+mapboxgl.accessToken = process.env.MAPBOX_TOKEN as string;
 
 export default function Map() {
     const mapContainer = useRef<HTMLDivElement>(null);
