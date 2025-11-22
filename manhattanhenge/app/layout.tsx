@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   description: "Manhattanhenge Azimuth Sunset Street Map",
 };
 
-// Imports:
-import dynamic from "next/dynamic";
+// // Imports:
+// import dynamic from "next/dynamic";
 
-// Constants:
-const ManhattanhengeMap = dynamic(() => Promise.resolve(function MapPage() { return <div style={{display: "none"}}/> }));
+// // Constants:
+// const ManhattanhengeMap = dynamic(() => Promise.resolve(function MapPage() { return <div style={{display: "none"}}/> }));
 
 export default function RootLayout({
   children,
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ManhattanhengeMap/>
+        {/* <ManhattanhengeMap/> */}
       </body>
     </html>
   );
