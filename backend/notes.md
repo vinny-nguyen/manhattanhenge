@@ -1,0 +1,3 @@
+Do you think having to choose a specific date and time makes sense and is intuitive? I feel like being able to see the sunset in real time after you press Enter would make more sense, but honestly I don't know I think being able to choose allows more flexibility since you can also plan your trip to get the Manhattanhenge pictures. After getting the backend working I'd also have to get the sponsor tracks integrated with my project, so far I've got some ideas:
+
+Though I'd also need to fully understand everything with the Manhattanhenge Azimuth Street Map calculations and math and all that. If you could explain that to me like I'm five how the math works and how I was able to reflect the streets aligned for Manhattanhenge that'd be pretty awesome.
