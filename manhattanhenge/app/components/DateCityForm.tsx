@@ -83,7 +83,8 @@ export default function DateCityForm({ onSubmit }: { onSubmit: (data: { city: st
             </label>
             <button
                 type="submit"
-                className="mt-2 w-full rounded bg-indigo-600 text-white py-2 font-semibold hover:bg-indigo-700 transition"
+                className="mt-2 w-full rounded bg-indigo-600 text-white py-2 font-semibold hover:bg-indigo-700 transition text-xl"
+                style={{ fontFamily: "var(--font-ebgaramond)" }}
             >
                 Show Alignment
             </button>
