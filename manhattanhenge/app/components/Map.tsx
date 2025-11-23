@@ -33,7 +33,7 @@ export default function Map({ alignedStreets, mapCenter }: { alignedStreets?: an
                 container: mapContainer.current,
                 style: "mapbox://styles/mapbox/outdoors-v12",
                 center: mapCenter || [-73.9857, 40.7484],
-                zoom: 8,
+                zoom: 4,
             });
 
             mapRef.current = map;
@@ -111,7 +111,7 @@ export default function Map({ alignedStreets, mapCenter }: { alignedStreets?: an
                 source: "aligned-streets",
                 paint: {
                     "line-color": "#ff6600",
-                    "line-width": 5,
+                    "line-width": 10,
                     "line-opacity": 0.8
                 }
             });

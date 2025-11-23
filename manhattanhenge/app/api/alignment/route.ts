@@ -16,7 +16,8 @@ export async function GET(req: NextRequest) {
     const lat = Number(searchParams.get("lat"));
     const lng = Number(searchParams.get("lng"));
     const datetime = searchParams.get("datetime");
-    const tolerance = Number(searchParams.get("tolerance") ?? 5);
+    const tolerance = Number(searchParams.get("tolerance") ?? 30);
+    const demo = searchParams.get("demo") === "true"; // Demo mode
 
     if (!lat || !lng || !datetime) {
         return Response.json({ error: "Missing parameters" }, { status: 400 });
@@ -29,32 +30,36 @@ export async function GET(req: NextRequest) {
         
         // Convert azimuth from radians to degrees, normalized to 0-360
         const sunAzimuth = ((pos.azimuth * 180) / Math.PI + 180) % 360;
-        const sunAltitude = (pos.altitude * 180) / Math.PI; // Height above horizon
+        const sunAltitude = (pos.altitude * 180) / Math.PI;
 
         console.log(`Sun azimuth: ${sunAzimuth.toFixed(2)}°, altitude: ${sunAltitude.toFixed(2)}°`);
 
-        // Only show alignments when sun is near horizon (sunrise/sunset)
-        if (sunAltitude < -5 || sunAltitude > 10) {
-            return Response.json({ 
-                sunAzimuth: Math.round(sunAzimuth * 100) / 100,
-                sunAltitude: Math.round(sunAltitude * 100) / 100,
-                aligned: [],
-                message: "Sun not at ideal angle for Manhattanhenge (needs to be near horizon)"
+        // In demo mode, always show streets
+        let aligned;
+        if (demo) {
+            aligned = manhattanStreets;
+            console.log("🎬 DEMO MODE: Showing all streets");
+        } else {
+            // Find aligned streets
+            aligned = manhattanStreets.filter(street => {
+                const diff = Math.abs(street.azimuth - sunAzimuth);
+                const isAligned = diff <= tolerance || diff >= (360 - tolerance);
+                if (isAligned) {
+                    console.log(`✅ ${street.name} aligned! Street: ${street.azimuth}°, Sun: ${sunAzimuth.toFixed(2)}°, Diff: ${diff.toFixed(2)}°`);
+                }
+                return isAligned;
             });
         }
 
-        // Find aligned streets
-        const aligned = manhattanStreets.filter(street => {
-            const diff = Math.abs(street.azimuth - sunAzimuth);
-            // Handle wrapping around 360°
-            return diff <= tolerance || diff >= (360 - tolerance);
-        });
+        console.log(`Total aligned streets: ${aligned.length}`);
 
         return Response.json({ 
             sunAzimuth: Math.round(sunAzimuth * 100) / 100,
             sunAltitude: Math.round(sunAltitude * 100) / 100,
             aligned,
-            totalStreets: manhattanStreets.length
+            totalStreets: manhattanStreets.length,
+            tolerance,
+            demo
         });
     } catch (error) {
         console.error("Error calculating alignment:", error);

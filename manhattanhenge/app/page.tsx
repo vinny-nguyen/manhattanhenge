@@ -14,7 +14,7 @@ export default function Home() {
 
   async function handleFormSubmit({ city, latitude, longitude, datetime}: { city: string, latitude: number, longitude: number, datetime: string}) {
     setMapCenter([longitude, latitude]);
-    const res = await fetch(`/api/alignment?lat=${latitude}&lng=${longitude}&datetime=${datetime}`);
+    const res = await fetch(`/api/alignment?lat=${latitude}&lng=${longitude}&datetime=${datetime}&demo=true`); // Added demo=true
     const data = await res.json();
     setAlignedStreets(data.aligned || []);
   }
