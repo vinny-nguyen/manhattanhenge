@@ -28,10 +28,8 @@ const isAligned = Math.abs(streetAzimuth - sunAzimuth) <= 5°
 - ±5° tolerance accounts for street irregularities
 
 ### Data Flow:
-```
-User enters city → Mapbox Geocoding API → Get coordinates
-User selects datetime → Frontend sends to /api/alignment
-Backend calls /api/streets → OpenStreetMap Overpass API
-Calculate street azimuths → Compare with sun azimuth
-Return aligned streets → Frontend overlays on Mapbox
-```
+- User enters city → Mapbox Geocoding API → Get coordinates
+- User selects datetime → Frontend sends to /api/alignment
+- Backend calls /api/streets → OpenStreetMap Overpass API
+- Calculate street azimuths → Compare with sun azimuth
+- Return aligned streets → Frontend overlays on Mapbox
