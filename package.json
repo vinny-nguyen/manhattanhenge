@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.17",
-    "mapbox-gl": "^3.16.0"
+    "axios": "^1.13.2",
+    "mapbox-gl": "^3.16.0",
+    "suncalc": "^1.9.0"
   }
 }
