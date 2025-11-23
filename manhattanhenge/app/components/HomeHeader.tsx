@@ -12,9 +12,9 @@ export default function HomeHeader() {
                 /ˌmænˈhætnˌhɛndʒ/ • noun
             </p>
             <p className="text-base text-zinc-600 dark:text-zinc-400">
-                <span className="font-medium text-zinc-700 dark:text-zinc-300"
-                style={{ fontFamily: "var(--font-playfair)" }}>
-                    A phenomenon when the setting sun aligns perfectly with the streets and buildings of Manhattan, New York.
+                <span className="font-medium text-zinc-700 dark:text-zinc-300 text-lg"
+                style={{ fontFamily: "var(--font-ebgaramond)" }}>
+                    A phenomenon where the setting sun aligns perfectly with the streets and buildings of Manhattan, New York.
                 </span>
             </p>
         </div>

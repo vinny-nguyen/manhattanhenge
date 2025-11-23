@@ -1,6 +1,6 @@
 // Next.js Imports & Constants:
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { EB_Garamond, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -32,9 +32,14 @@ const playfair = Playfair_Display({
 const playfair_light = Playfair_Display({
   variable: "--font-playfair_light",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["500"],
 });
 
+const ebgaramond = EB_Garamond({
+  variable: "--font-ebgaramond",
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export default function RootLayout({
   children,
@@ -43,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${ebgaramond.variable}`}>
         {children}
       </body>
     </html>
