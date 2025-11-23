@@ -70,7 +70,7 @@ export default function DateCityForm({ onSubmit }: { onSubmit: (data: { city: st
                             {suggestions.map((s, i) => (
                                 <li 
                                     key={i} 
-                                    className="px-3 py-2 text-sm cursor-pointer hover:bg-indigo-100 dark:hover:bg-indigo-900 dark:text-zinc-100"
+                                    className="px-3 py-2 text-sm cursor-pointer hover:bg-indigo-100 dark:hover:bg-indigo-900 dark:text-zinc-100 font-medium"
                                     onClick={() => {
                                         setCity(s.name);
                                         setSelectedCity(s);
