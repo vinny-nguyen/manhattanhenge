@@ -1,4 +1,4 @@
-🌇 Manhattanhenge: Azimuth Street Mapping for all Cities Around the World
+# 🌇 Manhattanhenge: Azimuth Street Mapping for all Cities Around the World
 
 1. **Sun Azimuth Calculation:**
    ```typescript
