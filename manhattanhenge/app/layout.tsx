@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 
 // Imports:
 import { Playfair_Display } from "next/font/google";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 // Constants:
 const playfair = Playfair_Display({
