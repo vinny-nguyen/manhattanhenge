@@ -51,6 +51,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${ebgaramond.variable}`}>
         {children}
+        <Analytics/>
       </body>
     </html>
   );
