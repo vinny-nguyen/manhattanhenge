@@ -3,6 +3,7 @@
     "@google/genai": "^1.30.0",
     "@google/generative-ai": "^0.24.1",
     "@tailwindcss/postcss": "^4.1.17",
+    "@vercel/analytics": "^1.6.0",
     "axios": "^1.13.2",
     "mapbox-gl": "^3.16.0",
     "suncalc": "^1.9.0"
